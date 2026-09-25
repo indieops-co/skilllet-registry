@@ -40,6 +40,7 @@ The day the site serves the same file, with the same CORS header, they switch ov
 | `for` | tags that pick the chooser group |
 | `requires` | slug of a Skilllet this one works alongside |
 | `url` | optional https override for the card link |
+| `repo` | the GitHub repo and local folder name inside `indieops-co`. It can differ from `slug` (`gbp-coach` holds `gbpcoach`). The slug is the product and never changes. |
 | `previously` | retired slugs, so the site can redirect them |
 
 ## Adding a Skilllet

@@ -23,6 +23,7 @@
     "app": "Also installs a program that runs on your computer (a background service or a desktop app)."
   },
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.url>/<slug>. 'previously' lists retired slugs so the site can redirect them.",
+  "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Client Library notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
   "_priceRule": "No prices anywhere in the catalogue or the guides. A price baked into a static HTML file shipped to a buyer is a price you can never change — every launch discount, every increase, every free-week promo would need fifteen rebuilds and would still be wrong on every guide already downloaded. Pricing lives on the sales page, which is the only place it can be current.",
   "skilllets": [
     {
@@ -63,7 +64,8 @@
       "for": [
         "building",
         "email"
-      ]
+      ],
+      "repo": "resend-ready"
     },
     {
       "id": "2026-04",
@@ -75,7 +77,8 @@
       "does": "Lossless pre-publish hygiene — invisible Unicode, file metadata, C2PA, whole folders at a time.",
       "for": [
         "publishing"
-      ]
+      ],
+      "repo": "press-ready"
     },
     {
       "id": "2026-05",
@@ -88,7 +91,8 @@
       "for": [
         "email",
         "getting clients"
-      ]
+      ],
+      "repo": "instantly-ready"
     },
     {
       "id": "2026-06",
@@ -101,7 +105,8 @@
       "for": [
         "publishing",
         "teaching"
-      ]
+      ],
+      "repo": "claujabi"
     },
     {
       "id": "2026-07",
@@ -113,7 +118,8 @@
       "does": "Converts text, markdown, a PDF, a post or a transcript into a self-contained interactive HTML flipbook.",
       "for": [
         "publishing"
-      ]
+      ],
+      "repo": "flipbook-maker"
     },
     {
       "id": "2026-08",
@@ -126,6 +132,7 @@
       "for": [
         "building"
       ],
+      "repo": "approval-pilot",
       "previously": [
         "planpilot"
       ]
@@ -140,7 +147,8 @@
       "does": "A context-aware handoff utility that routes your attention to the project that actually stalled.",
       "for": [
         "building"
-      ]
+      ],
+      "repo": "reminder-router"
     },
     {
       "id": "2026-10",
@@ -177,7 +185,8 @@
       "for": [
         "getting clients",
         "publishing"
-      ]
+      ],
+      "repo": "link-panther"
     },
     {
       "id": "2026-13",
@@ -190,7 +199,8 @@
       "for": [
         "local seo",
         "getting clients"
-      ]
+      ],
+      "repo": "gbp-coach"
     },
     {
       "id": "2026-14",
@@ -204,7 +214,8 @@
         "local seo",
         "getting clients"
       ],
-      "requires": "gbpcoach"
+      "requires": "gbpcoach",
+      "repo": "gbp-coach-pro"
     },
     {
       "id": "2026-15",
@@ -217,6 +228,7 @@
       "for": [
         "everything"
       ],
+      "repo": "indieops-client",
       "highlight": true
     },
     {
@@ -229,7 +241,8 @@
       "does": "Teaches Claude to notice when a chart, calculator, comparison or mini-app would serve you better than prose, and to build that instead.",
       "for": [
         "building"
-      ]
+      ],
+      "repo": "cavemaxx"
     },
     {
       "id": "2026-17",
@@ -242,7 +255,8 @@
       "for": [
         "writing",
         "publishing"
-      ]
+      ],
+      "repo": "pilot-pilot"
     },
     {
       "id": "2026-18",
@@ -254,7 +268,8 @@
       "does": "Catches Claude Code's questions first, so you can read them, copy them, and decide what happens next.",
       "for": [
         "building"
-      ]
+      ],
+      "repo": "question-pilot"
     },
     {
       "id": "2026-19",
@@ -266,7 +281,8 @@
       "does": "A prompt library that lives in your repo. It asks the few questions that change the output, shapes the prompt for the tool you're pasting into, and keeps every version.",
       "for": [
         "building"
-      ]
+      ],
+      "repo": "prompt-awesome"
     }
   ]
 }
