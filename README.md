@@ -42,6 +42,12 @@ The day the site serves the same file, with the same CORS header, they switch ov
 | `url` | optional https override for the card link |
 | `repo` | the GitHub repo and local folder name inside `indieops-co`. It can differ from `slug` (`gbp-coach` holds `gbpcoach`). The slug is the product and never changes. |
 | `previously` | retired slugs, so the site can redirect them |
+| `platforms` | where it runs: `macos` · `windows` · `linux`, each set to its minimum OS version (`""` when there is none worth stating) |
+| `worksWith` | the AI assistants it has been tested with: `claude` · `codex` · `gemini`. Only what has passed a real run; add one later in a new version |
+| `needs` | other software, with minimum versions, in the words the cover page uses |
+
+`platforms`, `worksWith` and `needs` feed the platform line on each Skilllet's cover page. Set them here
+first and copy them to the cover. The guide builder and the in-guide refresh ignore them.
 
 ## Adding a Skilllet
 

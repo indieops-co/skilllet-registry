@@ -25,6 +25,7 @@
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.url>/<slug>. 'previously' lists retired slugs so the site can redirect them.",
   "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Client Library notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
   "_priceRule": "No prices anywhere in the catalogue or the guides. A price baked into a static HTML file shipped to a buyer is a price you can never change — every launch discount, every increase, every free-week promo would need fifteen rebuilds and would still be wrong on every guide already downloaded. Pricing lives on the sales page, which is the only place it can be current.",
+  "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
   "skilllets": [
     {
       "id": "2026-01",
@@ -106,7 +107,21 @@
         "publishing",
         "teaching"
       ],
-      "repo": "claujabi"
+      "repo": "claujabi",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude",
+        "codex",
+        "gemini"
+      ],
+      "needs": [
+        "Node.js 18+",
+        "Chrome, Edge or Brave for PDF export"
+      ]
     },
     {
       "id": "2026-07",
