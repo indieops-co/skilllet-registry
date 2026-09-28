@@ -115,8 +115,7 @@
       },
       "worksWith": [
         "claude",
-        "codex",
-        "gemini"
+        "codex"
       ],
       "needs": [
         "Node.js 18+",
