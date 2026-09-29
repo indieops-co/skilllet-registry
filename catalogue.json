@@ -517,8 +517,8 @@
     },
     {
       "id": "2026-20",
-      "slug": "launchverdict",
-      "name": "LaunchVerdict",
+      "slug": "launchskeptic",
+      "name": "LaunchSkeptic",
       "kind": "skill",
       "status": "building",
       "price": 0,
@@ -527,7 +527,7 @@
       "for": [
         "building"
       ],
-      "repo": "launch-verdict",
+      "repo": "launch-skeptic",
       "platforms": {
         "macos": "",
         "windows": "",
