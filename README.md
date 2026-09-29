@@ -34,7 +34,7 @@ The day the site serves the same file, with the same CORS header, they switch ov
 | Field | Meaning |
 |---|---|
 | `id` | `<year>-<sequence>`, permanent |
-| `slug` | kebab-case, also the page at `indieops.co/<slug>` |
+| `slug` | kebab-case, also the product page at `indieops.co/skills/<slug>` (`brand.productPages`) |
 | `kind` | `skill` (copy a folder) · `plugin` (install from a marketplace) · `app` (also installs something that runs on your computer) |
 | `status` | `shipped` · `building` · `planned`. Planned entries never show in a chooser |
 | `freeTier` | name of a free edition of a paid Skilllet (e.g. PromptAwesome `Core`). `price` is then the paid edition's; the free edition ships the Free License |
