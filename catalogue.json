@@ -4,6 +4,8 @@
     "name": "IndieOps",
     "url": "https://indieops.co",
     "community": "https://indieops.co/proof-lab",
+    "cataloguePage": "https://indieops.co/skills-and-plugins",
+    "support": "support@indieops.co",
     "signature": "An IndieOps Skilllet — a copyable skill folder that does one job properly.",
     "termNote": "Skilllet, three Ls. It is our word. Spelling it consistently is the cheapest brand asset we own.",
     "catalogueUrls": [
@@ -24,7 +26,7 @@
   },
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.url>/<slug>. 'previously' lists retired slugs so the site can redirect them.",
   "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Client Library notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
-  "_priceRule": "No prices anywhere in the catalogue or the guides. A price baked into a static HTML file shipped to a buyer is a price you can never change — every launch discount, every increase, every free-week promo would need fifteen rebuilds and would still be wrong on every guide already downloaded. Pricing lives on the sales page, which is the only place it can be current.",
+  "_priceRule": "Prices live here and nowhere else: price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
   "skilllets": [
     {
@@ -33,25 +35,55 @@
       "name": "TastePilot",
       "kind": "skill",
       "status": "shipped",
+      "price": 29,
       "problem": "Your writing is good and it looks like a text file.",
       "does": "Renders Markdown into designed HTML publications using Canons — swappable design grammars.",
       "for": [
         "writing",
         "publishing"
       ],
-      "url": "https://tastepilot.org"
+      "url": "https://tastepilot.org",
+      "platforms": {
+        "macos": "12+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 20.18+ and pnpm",
+        "bash for setup (Git Bash or WSL on Windows)"
+      ]
     },
     {
       "id": "2026-02",
-      "slug": "oauth-doctor",
-      "name": "OAuth Doctor",
+      "slug": "oauth-coach",
+      "name": "OAuth Coach",
       "kind": "skill",
       "status": "shipped",
+      "price": 29,
       "problem": "Your Google sign-in screen says \"some-project-84f2b\" and nobody trusts it.",
       "does": "Diagnoses and polishes Google OAuth consent branding for Supabase and Firebase apps.",
       "for": [
         "building",
         "launching"
+      ],
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18.17+",
+        "A Supabase or Firebase project"
+      ],
+      "repo": "oauth-coach",
+      "previously": [
+        "oauth-doctor"
       ]
     },
     {
@@ -66,7 +98,20 @@
         "building",
         "email"
       ],
-      "repo": "resend-ready"
+      "repo": "resend-ready",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18+",
+        "A Resend account",
+        "A Next.js app"
+      ]
     },
     {
       "id": "2026-04",
@@ -74,12 +119,25 @@
       "name": "Press Ready",
       "kind": "plugin",
       "status": "shipped",
+      "price": 29,
       "problem": "You are about to publish files carrying invisible characters and metadata you did not mean to send.",
       "does": "Lossless pre-publish hygiene — invisible Unicode, file metadata, C2PA, whole folders at a time.",
       "for": [
         "publishing"
       ],
-      "repo": "press-ready"
+      "repo": "press-ready",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Python 3.10+",
+        "exiftool, qpdf and ffmpeg for some file types (optional)"
+      ]
     },
     {
       "id": "2026-05",
@@ -87,13 +145,26 @@
       "name": "Instantly Ready",
       "kind": "skill",
       "status": "shipped",
+      "price": 0,
       "problem": "Cold email infrastructure has nine moving parts and getting one wrong burns the domain.",
       "does": "Walks a beginner from signup to a verified READY TO SEND state, with a bundled DNS checker.",
       "for": [
         "email",
         "getting clients"
       ],
-      "repo": "instantly-ready"
+      "repo": "instantly-ready",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "An Instantly account",
+        "Node.js 18+ for the DNS check (optional)"
+      ]
     },
     {
       "id": "2026-06",
@@ -101,6 +172,7 @@
       "name": "Claujabi",
       "kind": "skill",
       "status": "shipped",
+      "price": 49,
       "problem": "Course platforms want a monthly fee to host a thing you already made.",
       "does": "Turns an outline or a pasted transcript into a distributable single-file HTML course with progress saved.",
       "for": [
@@ -133,7 +205,15 @@
       "for": [
         "publishing"
       ],
-      "repo": "flipbook-maker"
+      "repo": "flipbook-maker",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ]
     },
     {
       "id": "2026-08",
@@ -141,6 +221,7 @@
       "name": "ApprovalPilot",
       "kind": "plugin",
       "status": "building",
+      "price": 29,
       "problem": "A good plan-mode session dies when the context window does.",
       "does": "At the plan-approval moment it shows how full your context is, says whether to hand off, and puts a complete handoff prompt on your clipboard.",
       "for": [
@@ -149,6 +230,18 @@
       "repo": "approval-pilot",
       "previously": [
         "planpilot"
+      ],
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Claude Code",
+        "Node.js 18+"
       ]
     },
     {
@@ -157,23 +250,49 @@
       "name": "Reminder Router",
       "kind": "app",
       "status": "building",
+      "price": 29,
       "problem": "Four AI sessions running and no idea which one needs you.",
       "does": "A context-aware handoff utility that routes your attention to the project that actually stalled.",
       "for": [
         "building"
       ],
-      "repo": "reminder-router"
+      "repo": "reminder-router",
+      "platforms": {
+        "macos": "11+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 22.13+",
+        "git"
+      ]
     },
     {
       "id": "2026-10",
-      "slug": "fable-cover",
-      "name": "Fable Cover",
+      "slug": "storybook-cover",
+      "name": "StoryBook Cover",
       "kind": "skill",
       "status": "shipped",
+      "price": 0,
       "problem": "The story is written and the cover looks like clip art.",
-      "does": "Turns a fable title and a few details into image prompts that produce one coherent storybook cover.",
+      "does": "Turns a story title and a few details into image prompts that produce one coherent storybook cover.",
       "for": [
         "publishing"
+      ],
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Any image generator (Midjourney, GPT Image, Flux…)"
+      ],
+      "previously": [
+        "fable-cover"
       ]
     },
     {
@@ -194,13 +313,27 @@
       "name": "LinkPanther",
       "kind": "plugin",
       "status": "shipped",
+      "price": 29,
       "problem": "Your links are on somebody else's domain and you cannot change where they point.",
       "does": "Works out the most branded URL architecture your domain can safely support, then builds and runs it.",
       "for": [
         "getting clients",
         "publishing"
       ],
-      "repo": "link-panther"
+      "repo": "link-panther",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 20.9+",
+        "A domain you control",
+        "Free Vercel and Supabase accounts"
+      ]
     },
     {
       "id": "2026-13",
@@ -208,13 +341,22 @@
       "name": "GBPCoach",
       "kind": "skill",
       "status": "shipped",
+      "price": 0,
       "problem": "Google Maps decides whether a local business gets called, and nobody explains how.",
       "does": "Learns a business once, grades its Google Business Profile, and hands over three things to do this week with the copy already written.",
       "for": [
         "local seo",
         "getting clients"
       ],
-      "repo": "gbp-coach"
+      "repo": "gbp-coach",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ]
     },
     {
       "id": "2026-14",
@@ -222,6 +364,7 @@
       "name": "GBPCoach Pro",
       "kind": "skill",
       "status": "shipped",
+      "price": 49,
       "problem": "You can see your own profile. You cannot see what the businesses beating you have done.",
       "does": "Adds live Maps data via your own API key — category intelligence, competitor files, review benchmarking, a client-ready monthly report.",
       "for": [
@@ -229,7 +372,19 @@
         "getting clients"
       ],
       "requires": "gbpcoach",
-      "repo": "gbp-coach-pro"
+      "repo": "gbp-coach-pro",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18+",
+        "An Outscraper or DataForSEO account"
+      ]
     },
     {
       "id": "2026-15",
@@ -237,13 +392,25 @@
       "name": "Client Library",
       "kind": "skill",
       "status": "shipped",
+      "price": 0,
       "problem": "Every Skilllet asks you the same six questions about the same business.",
       "does": "One plain-Markdown library on your machine that every IndieOps Skilllet reads and writes. Install it once and they stop asking.",
       "for": [
         "everything"
       ],
       "repo": "indieops-client",
-      "highlight": true
+      "highlight": true,
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18+ for the helper script (optional)"
+      ]
     },
     {
       "id": "2026-16",
@@ -251,12 +418,24 @@
       "name": "CaveMaxx",
       "kind": "plugin",
       "status": "building",
+      "price": 0,
       "problem": "You asked a question and got an essay when a diagram would have done.",
       "does": "Teaches Claude to notice when a chart, calculator, comparison or mini-app would serve you better than prose, and to build that instead.",
       "for": [
         "building"
       ],
-      "repo": "cavemaxx"
+      "repo": "cavemaxx",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Claude Code, or a Claude plan with custom skills"
+      ]
     },
     {
       "id": "2026-17",
@@ -264,13 +443,25 @@
       "name": "Pilot-Pilot",
       "kind": "plugin",
       "status": "building",
+      "price": 29,
       "problem": "Your script reads like everybody else's AI script.",
       "does": "An AI writer's room: learns your voice, develops the story, writes for the format, then hunts down the AI slop before your audience does.",
       "for": [
         "writing",
         "publishing"
       ],
-      "repo": "pilot-pilot"
+      "repo": "pilot-pilot",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Python 3.9+ for lint and PDF export (optional)"
+      ]
     },
     {
       "id": "2026-18",
@@ -278,12 +469,22 @@
       "name": "QuestionPilot",
       "kind": "app",
       "status": "building",
+      "price": 29,
       "problem": "Claude Code asks a question and the picker grabs your terminal before you've had a chance to think.",
       "does": "Catches Claude Code's questions first, so you can read them, copy them, and decide what happens next.",
       "for": [
         "building"
       ],
-      "repo": "question-pilot"
+      "repo": "question-pilot",
+      "platforms": {
+        "macos": "13+ Apple Silicon"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Claude Code 2.1.85+"
+      ]
     },
     {
       "id": "2026-19",
@@ -291,12 +492,24 @@
       "name": "PromptAwesome",
       "kind": "skill",
       "status": "building",
+      "price": 0,
       "problem": "Every AI tool wants its prompts shaped differently, and yours are scattered across notes apps.",
       "does": "A prompt library that lives in your repo. It asks the few questions that change the output, shapes the prompt for the tool you're pasting into, and keeps every version.",
       "for": [
         "building"
       ],
-      "repo": "prompt-awesome"
+      "repo": "prompt-awesome",
+      "platforms": {
+        "macos": "11+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 22.13+"
+      ]
     }
   ]
 }

@@ -21,8 +21,10 @@ The day the site serves the same file, with the same CORS header, they switch ov
 
 - **An ID is forever.** `2026-16` means CaveMaxx for good. It is assigned at first public release and never
   re-stamped. The version number carries freshness.
-- **No prices, ever.** Not here, not on a card, not in a guide. A price baked into a downloaded file
-  is wrong the first time a promo runs. Pricing lives on the sales page.
+- **Prices live here, and only here.** `price` is the current price in whole US dollars (0 is free). The
+  indieops.co catalogue page and the store read it, so a price change is one edit. Nothing shipped to a buyer
+  shows a price: not a guide, a cover, a README or a license. A price baked into a downloaded file is wrong
+  the first time a promo runs.
 - **Never a secret.** This repo is public.
 - **Keep the path.** Guides already on people's disks have this URL baked in. Renaming the repo, moving it
   to another owner, or changing the default branch breaks them. So does creating a new repo at an old name.
@@ -35,6 +37,7 @@ The day the site serves the same file, with the same CORS header, they switch ov
 | `slug` | kebab-case, also the page at `indieops.co/<slug>` |
 | `kind` | `skill` (copy a folder) · `plugin` (install from a marketplace) · `app` (also installs something that runs on your computer) |
 | `status` | `shipped` · `building` · `planned`. Planned entries never show in a chooser |
+| `price` | current price in whole US dollars, `0` for free. Also picks the license: 0 ships the IndieOps Free License, anything else the Commercial one. Never shown in a guide |
 | `problem` | the reader's complaint, one line |
 | `does` | what it does about it, one line |
 | `for` | tags that pick the chooser group |
