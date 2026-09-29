@@ -26,7 +26,7 @@
   },
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.url>/<slug>. 'previously' lists retired slugs so the site can redirect them.",
   "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Client Library notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
-  "_priceRule": "Prices live here and nowhere else: price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License.",
+  "_priceRule": "Prices live here and nowhere else: price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. freeTier names a free edition of a paid Skilllet (PromptAwesome Core); price is then the paid edition's. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License, and a freeTier edition ships the Free one.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
   "skilllets": [
     {
@@ -92,6 +92,7 @@
       "name": "Resend Ready",
       "kind": "plugin",
       "status": "shipped",
+      "price": 0,
       "problem": "Your app needs to send email and you have never configured a sending domain.",
       "does": "Takes a Next.js app from no email to sending — and optionally receiving — through Resend, with DNS verified.",
       "for": [
@@ -200,6 +201,7 @@
       "name": "Flipbook Maker",
       "kind": "skill",
       "status": "shipped",
+      "price": 0,
       "problem": "A long document nobody finishes reading.",
       "does": "Converts text, markdown, a PDF, a post or a transcript into a self-contained interactive HTML flipbook.",
       "for": [
@@ -293,7 +295,8 @@
       ],
       "previously": [
         "fable-cover"
-      ]
+      ],
+      "repo": "storybook-cover"
     },
     {
       "id": "2026-11",
@@ -492,7 +495,7 @@
       "name": "PromptAwesome",
       "kind": "skill",
       "status": "building",
-      "price": 0,
+      "price": 19,
       "problem": "Every AI tool wants its prompts shaped differently, and yours are scattered across notes apps.",
       "does": "A prompt library that lives in your repo. It asks the few questions that change the output, shapes the prompt for the tool you're pasting into, and keeps every version.",
       "for": [
@@ -509,7 +512,8 @@
       ],
       "needs": [
         "Node.js 22.13+"
-      ]
+      ],
+      "freeTier": "Core"
     }
   ]
 }
