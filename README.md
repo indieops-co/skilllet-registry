@@ -53,8 +53,25 @@ The day the site serves the same file, with the same CORS header, they switch ov
 `platforms`, `worksWith` and `needs` feed the platform line on each Skilllet's cover page. Set them here
 first and copy them to the cover. The guide builder and the in-guide refresh ignore them.
 
+## The plugin marketplace
+
+This repo is also the `indieops-co` Claude Code plugin marketplace (`.claude-plugin/marketplace.json`). One
+command adds every IndieOps plugin that can be installed straight from GitHub:
+
+```
+/plugin marketplace add indieops-co/skilllet-registry
+/plugin install cavemaxx@indieops-co
+/plugin marketplace update indieops-co     # later, to pick up new versions
+```
+
+Claude Code installs a plugin by cloning its repo with the user's own GitHub login, so the marketplace lists
+**only free plugins in public repos**. Sold plugins stay private and install from their download instead. Each
+entry is `name`, a `github` source, `description` and `category`, with no `version`: the plugin's own
+`plugin.json` carries that. The full rule is "Plugins and the marketplace" in `indieops-brand/BRAND.md`.
+
 ## Adding a Skilllet
 
 1. Add the entry with the next free ID.
 2. Commit and push. Every guide already out there picks it up within about 5 minutes.
 3. Rebuild the guides in the brand kit (`indieops-brand/scripts/build-guide.mjs`) so the new card is baked into the next release.
+4. If it's a free plugin in a public repo, add it to `.claude-plugin/marketplace.json` too.

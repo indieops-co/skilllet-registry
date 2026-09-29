@@ -1,0 +1,21 @@
+{
+  "name": "indieops-co",
+  "owner": {
+    "name": "Dave Biggs",
+    "url": "https://indieops.co"
+  },
+  "metadata": {
+    "description": "IndieOps plugins you can install straight from GitHub. Free plugins in public repos only; sold plugins install from their download."
+  },
+  "plugins": [
+    {
+      "name": "cavemaxx",
+      "source": {
+        "source": "github",
+        "repo": "indieops-co/cavemaxx"
+      },
+      "description": "Teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max.",
+      "category": "productivity"
+    }
+  ]
+}
