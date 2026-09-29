@@ -514,6 +514,32 @@
         "Node.js 22.13+"
       ],
       "freeTier": "Core"
+    },
+    {
+      "id": "2026-20",
+      "slug": "launchverdict",
+      "name": "LaunchVerdict",
+      "kind": "skill",
+      "status": "building",
+      "price": 0,
+      "problem": "You're about to spend months building an idea nobody has checked.",
+      "does": "Researches the idea and returns pursue, pivot or kill, with every claim sourced and a 14-day plan to prove it wrong.",
+      "for": [
+        "building"
+      ],
+      "repo": "launch-verdict",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Web search turned on in Claude",
+        "Python 3.6+ for the report checks (optional)"
+      ]
     }
   ]
 }
