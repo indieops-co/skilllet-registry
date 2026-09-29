@@ -65,7 +65,7 @@ command adds every IndieOps plugin that can be installed straight from GitHub:
 ```
 
 Claude Code installs a plugin by cloning its repo with the user's own GitHub login, so the marketplace lists
-**only free plugins in public repos**. Sold plugins stay private and install from their download instead. Each
+**only free plugins in public repos** (CaveMaxx and Resend Ready today). Sold plugins stay private and install from their download instead. Each
 entry is `name`, a `github` source, `description` and `category`, with no `version`: the plugin's own
 `plugin.json` carries that. The full rule is "Plugins and the marketplace" in `indieops-brand/BRAND.md`.
 
