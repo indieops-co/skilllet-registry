@@ -233,7 +233,7 @@
       "slug": "approvalpilot",
       "name": "ApprovalPilot",
       "kind": "plugin",
-      "status": "building",
+      "status": "shipped",
       "price": 29,
       "checkout": "",
       "problem": "A good plan-mode session dies when the context window does.",
