@@ -222,10 +222,10 @@
       "slug": "approvalpilot",
       "name": "ApprovalPilot",
       "kind": "plugin",
-      "status": "building",
+      "status": "shipped",
       "price": 29,
       "problem": "A good plan-mode session dies when the context window does.",
-      "does": "At the plan-approval moment it shows how full your context is, says whether to hand off, and puts a complete handoff prompt on your clipboard.",
+      "does": "Watches how full your context is, offers a fresh-session handoff once a thread passes your threshold, and puts a complete handoff prompt on your clipboard at every plan approval.",
       "for": [
         "building"
       ],
