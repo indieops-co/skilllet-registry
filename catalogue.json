@@ -28,6 +28,8 @@
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.productPages>/<slug> (indieops.co/skills/<slug>, so the top level stays free for marketing pages). 'previously' lists retired slugs so the site can redirect them.",
   "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Shared Profiles notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
   "_priceRule": "Prices live here and nowhere else: price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. freeTier names a free edition of a paid Skilllet (PromptAwesome Core); price is then the paid edition's. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License, and a freeTier edition ships the Free one.",
+  "_billingRule": "billing: \"annual\" means price is per year (the site shows \"$199 / year\" and the store product is a yearly subscription); absent means a single payment. usage: the one line about usage fees, shown under the price. Both only on app-kind entries so far.",
+  "_checkoutRule": "checkout is the entry's Lemon Squeezy checkout link, https only. A product page's download button goes through it even when price is 0, so every download leaves the email that updates are sent to. Empty means the store product isn't set up yet, and the page says the download opens soon. Only the indieops.co product pages read it; it is never shown in anything that ships. An entry that is still building keeps it empty until it ships.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
   "skilllets": [
     {
@@ -37,6 +39,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 29,
+      "checkout": "",
       "problem": "Your writing is good and it looks like a text file.",
       "does": "Renders Markdown into designed HTML publications using Canons — swappable design grammars.",
       "for": [
@@ -63,6 +66,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 29,
+      "checkout": "",
       "problem": "Your Google sign-in screen says \"some-project-84f2b\" and nobody trusts it.",
       "does": "Diagnoses and polishes Google OAuth consent branding for Supabase and Firebase apps.",
       "for": [
@@ -93,6 +97,7 @@
       "kind": "plugin",
       "status": "shipped",
       "price": 0,
+      "checkout": "",
       "problem": "Your app needs to send email and you have never configured a sending domain.",
       "does": "Takes a Next.js app from no email to sending — and optionally receiving — through Resend, with DNS verified.",
       "for": [
@@ -121,6 +126,7 @@
       "kind": "plugin",
       "status": "shipped",
       "price": 29,
+      "checkout": "",
       "problem": "You are about to publish files carrying invisible characters and metadata you did not mean to send.",
       "does": "Lossless pre-publish hygiene — invisible Unicode, file metadata, C2PA, whole folders at a time.",
       "for": [
@@ -147,11 +153,11 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
+      "checkout": "",
       "problem": "Cold email infrastructure has nine moving parts and getting one wrong burns the domain.",
       "does": "Walks a beginner from signup to a verified READY TO SEND state, with a bundled DNS checker.",
       "for": [
-        "email",
-        "getting clients"
+        "email"
       ],
       "repo": "instantly-ready",
       "platforms": {
@@ -174,6 +180,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 49,
+      "checkout": "",
       "problem": "Course platforms want a monthly fee to host a thing you already made.",
       "does": "Turns an outline or a pasted transcript into a distributable single-file HTML course with progress saved.",
       "for": [
@@ -202,6 +209,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
+      "checkout": "",
       "problem": "A long document nobody finishes reading.",
       "does": "Converts text, markdown, a PDF, a post or a transcript into a self-contained interactive HTML flipbook.",
       "for": [
@@ -224,6 +232,7 @@
       "kind": "plugin",
       "status": "building",
       "price": 29,
+      "checkout": "",
       "problem": "A good plan-mode session dies when the context window does.",
       "does": "At the plan-approval moment it shows how full your context is, says whether to hand off, and puts a complete handoff prompt on your clipboard.",
       "for": [
@@ -253,6 +262,7 @@
       "kind": "app",
       "status": "building",
       "price": 29,
+      "checkout": "",
       "problem": "Four AI sessions running and no idea which one needs you.",
       "does": "A context-aware handoff utility that routes your attention to the project that actually stalled.",
       "for": [
@@ -277,6 +287,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
+      "checkout": "",
       "problem": "The story is written and the cover looks like clip art.",
       "does": "Turns a story title and a few details into image prompts that produce one coherent storybook cover.",
       "for": [
@@ -304,6 +315,9 @@
       "name": "Memvana",
       "kind": "skill",
       "status": "planned",
+      "price": 199,
+      "billing": "annual",
+      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
       "problem": "Four thousand screenshots and a Notes app you have not opened in a year.",
       "does": "Reads the pile and works out what you were actually trying to remember.",
       "for": [
@@ -317,6 +331,7 @@
       "kind": "plugin",
       "status": "shipped",
       "price": 29,
+      "checkout": "",
       "problem": "Your links are on somebody else's domain and you cannot change where they point.",
       "does": "Works out the most branded URL architecture your domain can safely support, then builds and runs it.",
       "for": [
@@ -345,6 +360,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
+      "checkout": "",
       "problem": "Google Maps decides whether a local business gets called, and nobody explains how.",
       "does": "Learns a business once, grades its Google Business Profile, and hands over three things to do this week with the copy already written.",
       "for": [
@@ -368,6 +384,7 @@
       "kind": "skill",
       "status": "shipped",
       "price": 49,
+      "checkout": "",
       "problem": "You can see your own profile. You cannot see what the businesses beating you have done.",
       "does": "Adds live Maps data via your own API key — category intelligence, competitor files, review benchmarking, a client-ready monthly report.",
       "for": [
@@ -396,7 +413,8 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
-      "problem": "Every Skilllet asks you the same six questions about the same business.",
+      "checkout": "",
+      "problem": "Our other Skilllets reference this for your and your clients' profiles & preferences.",
       "does": "One folder of plain notes on your computer, your profile and one per business, that every IndieOps Skilllet reads and writes. Install it once and they stop asking.",
       "for": [
         "everything"
@@ -422,6 +440,7 @@
       "kind": "plugin",
       "status": "building",
       "price": 0,
+      "checkout": "",
       "problem": "You asked a question and got an essay when a diagram would have done.",
       "does": "Teaches Claude to notice when a chart, calculator, comparison or mini-app would serve you better than prose, and to build that instead.",
       "for": [
@@ -447,6 +466,7 @@
       "kind": "plugin",
       "status": "building",
       "price": 29,
+      "checkout": "",
       "problem": "Your script reads like everybody else's AI script.",
       "does": "An AI writer's room: learns your voice, develops the story, writes for the format, then hunts down the AI slop before your audience does.",
       "for": [
@@ -473,6 +493,7 @@
       "kind": "app",
       "status": "building",
       "price": 29,
+      "checkout": "",
       "problem": "Claude Code asks a question and the picker grabs your terminal before you've had a chance to think.",
       "does": "Catches Claude Code's questions first, so you can read them, copy them, and decide what happens next.",
       "for": [
@@ -496,6 +517,7 @@
       "kind": "skill",
       "status": "building",
       "price": 19,
+      "checkout": "",
       "problem": "Every AI tool wants its prompts shaped differently, and yours are scattered across notes apps.",
       "does": "A prompt library that lives in your repo. It asks the few questions that change the output, shapes the prompt for the tool you're pasting into, and keeps every version.",
       "for": [
@@ -522,6 +544,7 @@
       "kind": "skill",
       "status": "building",
       "price": 0,
+      "checkout": "",
       "problem": "You're about to spend months building an idea nobody has checked.",
       "does": "Researches the idea and returns pursue, pivot or kill, with every claim sourced and a 14-day plan to prove it wrong.",
       "for": [
@@ -540,6 +563,23 @@
         "Web search turned on in Claude",
         "Python 3.6+ for the report checks (optional)"
       ]
+    },
+    {
+      "id": "2026-21",
+      "slug": "gbp-magnet",
+      "name": "GBP Magnet",
+      "kind": "app",
+      "status": "building",
+      "price": 199,
+      "billing": "annual",
+      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
+      "checkout": "",
+      "problem": "Local businesses are losing calls to a weak Google Business Profile, and you can't find them fast enough to help.",
+      "does": "Finds local businesses whose Google Business Profile is costing them calls, and hands you the opening line.",
+      "for": [
+        "getting clients"
+      ],
+      "repo": "gbp-magnet"
     }
   ]
 }
