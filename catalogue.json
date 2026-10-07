@@ -580,6 +580,32 @@
         "getting clients"
       ],
       "repo": "gbp-magnet"
+    },
+    {
+      "id": "2026-22",
+      "slug": "ruv-lite",
+      "name": "ruv lite",
+      "kind": "skill",
+      "status": "building",
+      "price": 0,
+      "checkout": "",
+      "problem": "Everyone's talking about Ruflo, RuVector and agent swarms, and you can't tell which of it your project actually needs.",
+      "does": "Weighs the simple option against the rUv one and says use it, later or skip it, with the cost, the trigger to revisit and current sources.",
+      "for": [
+        "building"
+      ],
+      "repo": "ruv-lite",
+      "platforms": {
+        "macos": "",
+        "windows": "",
+        "linux": ""
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Web search turned on in Claude, for live source checks (optional)"
+      ]
     }
   ]
 }
