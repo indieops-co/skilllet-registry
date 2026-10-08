@@ -21,6 +21,10 @@ The day the site serves the same file, with the same CORS header, they switch ov
 
 - **An ID is forever.** `2026-16` means CaveMaxx for good. It is assigned at first public release and never
   re-stamped. The version number carries freshness.
+- **One sequence, three lists.** Skilllets, courses and reserved IDs share the numbering. The next free ID is
+  one past the highest in `skilllets`, `courses` and `reserved` together. In October 2026 a Skilllet waiting in
+  an unmerged pull request and one added straight to `main` both took `2026-21`; `reserved` exists so that
+  can't happen again.
 - **Prices live here, and only here.** `price` is the current price in whole US dollars (0 is free). The
   indieops.co catalogue page and the store read it, so a price change is one edit. Nothing shipped to a buyer
   shows a price: not a guide, a cover, a README or a license. A price baked into a downloaded file is wrong
@@ -53,6 +57,19 @@ The day the site serves the same file, with the same CORS header, they switch ov
 `platforms`, `worksWith` and `needs` feed the platform line on each Skilllet's cover page. Set them here
 first and copy them to the cover. The guide builder and the in-guide refresh ignore them.
 
+## Courses and reserved IDs
+
+`courses` lists the IndieOps Courses: single-file HTML courses, given away as $0 Lemon Squeezy lead magnets
+and listed on `indieops.co/guides`. `2026-23` is the first, *Turn Strangers Into Regulars* (the Marketing
+Masterclass). A course takes its ID from the same sequence as the Skilllets, but it sits in its own list
+because the guides' choosers and the indieops.co directory read only `skilllets`. So a course never appears
+as a card under *"Which Skilllet do you need next?"*. Its fields are `id`, `slug`, `name`, `series`, `status`
+(`shipped` · `building`), `problem`, `does`, and `source`, its folder in the private guides repo.
+
+`reserved` holds an ID claimed by a Skilllet whose entry is waiting in a pull request that merges on release
+day. Nothing reads it except whoever picks the next ID. The pull request that adds the entry to `skilllets`
+deletes its line from `reserved`.
+
 ## The plugin marketplace
 
 This repo is also the `indieops-co` Claude Code plugin marketplace (`.claude-plugin/marketplace.json`). One
@@ -71,7 +88,8 @@ entry is `name`, a `github` source, `description` and `category`, with no `versi
 
 ## Adding a Skilllet
 
-1. Add the entry with the next free ID.
+1. Add the entry with the next free ID: one past the highest across `skilllets`, `courses` and `reserved`.
+   If the entry is going to wait in a pull request, put its ID in `reserved` on `main` straight away.
 2. Commit and push. Every guide already out there picks it up within about 5 minutes.
 3. Rebuild the guides in the brand kit (`indieops-brand/scripts/build-guide.mjs`) so the new card is baked into the next release.
 4. If it's a free plugin in a public repo, add it to `.claude-plugin/marketplace.json` too.

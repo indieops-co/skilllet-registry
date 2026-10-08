@@ -14,7 +14,7 @@
       "https://raw.githubusercontent.com/indieops-co/skilllet-registry/main/catalogue.json"
     ]
   },
-  "_idRule": "id is assigned once, at first public release, and never changes. Format: <release year>-<sequence within that year>. The version carries freshness; the id is a primary key. Re-stamping an id because something was revised destroys the only property that makes it an id.",
+  "_idRule": "id is assigned once, at first public release, and never changes. Format: <release year>-<sequence within that year>. The version carries freshness; the id is a primary key. Re-stamping an id because something was revised destroys the only property that makes it an id. One sequence covers skilllets, courses and reserved: the next free id is one past the highest in all three lists.",
   "_statusValues": [
     "shipped",
     "building",
@@ -31,6 +31,8 @@
   "_billingRule": "billing: \"annual\" means price is per year (the site shows \"$199 / year\" and the store product is a yearly subscription); absent means a single payment. usage: the one line about usage fees, shown under the price. Both only on app-kind entries so far.",
   "_checkoutRule": "checkout is the entry's Lemon Squeezy checkout link, https only. A product page's download button goes through it even when price is 0, so every download leaves the email that updates are sent to. Empty means the store product isn't set up yet, and the page says the download opens soon. Only the indieops.co product pages read it; it is never shown in anything that ships. An entry that is still building keeps it empty until it ships.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
+  "_courseRule": "courses are IndieOps Courses: single-file HTML courses, delivered as $0 Lemon Squeezy lead magnets and listed on indieops.co/guides. They take ids from the same sequence as skilllets so the two can never collide, but they live in their own list because the guides' choosers and the indieops.co directory read only skilllets: a course never appears as a card under 'Which Skilllet do you need next?'. Fields: id, slug, name, series, status (shipped | building), problem, does, and source (its folder in the private guides repo).",
+  "_reservedRule": "reserved holds an id claimed by a Skilllet whose entry is still waiting in a pull request (one that merges on release day). Nothing reads it except whoever picks the next id. The pull request that adds the entry to skilllets deletes its line here.",
   "skilllets": [
     {
       "id": "2026-01",
@@ -565,23 +567,6 @@
       ]
     },
     {
-      "id": "2026-21",
-      "slug": "gbp-magnet",
-      "name": "GBP Magnet",
-      "kind": "app",
-      "status": "building",
-      "price": 99,
-      "billing": "annual",
-      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
-      "checkout": "",
-      "problem": "Local businesses are losing calls to a weak Google Business Profile, and you can't find them fast enough to help.",
-      "does": "Finds local businesses whose Google Business Profile is costing them calls, and hands you the opening line.",
-      "for": [
-        "getting clients"
-      ],
-      "repo": "gbp-magnet"
-    },
-    {
       "id": "2026-22",
       "slug": "ruv-lite",
       "name": "ruv lite",
@@ -606,6 +591,43 @@
       "needs": [
         "Web search turned on in Claude, for live source checks (optional)"
       ]
+    },
+    {
+      "id": "2026-24",
+      "slug": "gbp-magnet",
+      "name": "GBP Magnet",
+      "kind": "app",
+      "status": "building",
+      "price": 99,
+      "billing": "annual",
+      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
+      "checkout": "",
+      "problem": "Local businesses are losing calls to a weak Google Business Profile, and you can't find them fast enough to help.",
+      "does": "Finds local businesses whose Google Business Profile is costing them calls, and hands you the opening line.",
+      "for": [
+        "getting clients"
+      ],
+      "repo": "gbp-magnet"
+    }
+  ],
+  "courses": [
+    {
+      "id": "2026-23",
+      "slug": "marketing-masterclass",
+      "name": "Turn Strangers Into Regulars",
+      "series": "IndieOps Marketing Masterclass",
+      "status": "building",
+      "problem": "I keep launching to an empty room.",
+      "does": "Eight short Issues and a 30-day build that set up a small, honest marketing system: a page before launch, a list you own, a three-email welcome and numbers that help you decide.",
+      "source": "guides/MarketingMasterclass"
+    }
+  ],
+  "reserved": [
+    {
+      "id": "2026-21",
+      "slug": "cabinet-ready",
+      "name": "Cabinet-Ready",
+      "note": "Its entry waits in skilllet-registry PR #3, which merges on release day and deletes this line."
     }
   ]
 }
