@@ -21,11 +21,13 @@ The day the site serves the same file, with the same CORS header, they switch ov
 
 - **An ID is forever.** `2026-16` means CaveMaxx for good. It is assigned at first public release and never
   re-stamped. The version number carries freshness.
-- **One sequence, three lists.** Skilllets, courses and reserved IDs share the numbering. The next free ID is
-  one past the highest in `skilllets`, `courses` and `reserved` together. In October 2026 a Skilllet waiting in
-  an unmerged pull request and one added straight to `main` both took `2026-21`; `reserved` exists so that
-  can't happen again.
-- **Prices live here, and only here.** `price` is the current price in whole US dollars (0 is free). The
+- **One sequence, four lists.** Skilllets, software, courses and reserved IDs share the numbering. The next free
+  ID is one past the highest in `skilllets`, `software`, `courses` and `reserved` together. In October 2026 a
+  Skilllet waiting in an unmerged pull request and one added straight to `main` both took `2026-21`; `reserved`
+  exists so that can't happen again.
+- **A Skilllet is a single payment.** Every guide's chooser tells the reader "no subscription", and guides already
+  downloaded keep saying it. So nothing in `skilllets` is billed by the year: that is software (below).
+- **Skilllet prices live here, and only here.** `price` is the current price in whole US dollars (0 is free). The
   indieops.co catalogue page and the store read it, so a price change is one edit. Nothing shipped to a buyer
   shows a price: not a guide, a cover, a README or a license. A price baked into a downloaded file is wrong
   the first time a promo runs.
@@ -58,7 +60,14 @@ The day the site serves the same file, with the same CORS header, they switch ov
 `platforms`, `worksWith` and `needs` feed the platform line on each Skilllet's cover page. Set them here
 first and copy them to the cover. The guide builder and the in-guide refresh ignore them.
 
-## Courses and reserved IDs
+## Software, courses and reserved IDs
+
+`software` lists the IndieOps Software that has an ID: tools sold as a yearly subscription (and included for
+IndieOps Business Incubator members), not Skilllets. `2026-24`, GBP Magnet, is the first. It takes its ID from
+the same sequence, but sits in its own list because every guide's chooser, including the live top-up inside
+guides already downloaded, reads only `skilllets`. Its price, billing, usage line, checkout and homepage line
+live in the site's `src/data/products.json` with the rest of the software, so a price is still in one place.
+Its fields are `id`, `slug`, `name`, `status`, `problem`, `does` and `repo`.
 
 `courses` lists the IndieOps Courses: single-file HTML courses, given away as $0 Lemon Squeezy lead magnets
 and listed on `indieops.co/guides`. `2026-23` is the first, *Turn Strangers Into Regulars* (the Marketing
@@ -89,7 +98,7 @@ entry is `name`, a `github` source, `description` and `category`, with no `versi
 
 ## Adding a Skilllet
 
-1. Add the entry with the next free ID: one past the highest across `skilllets`, `courses` and `reserved`.
+1. Add the entry with the next free ID: one past the highest across `skilllets`, `software`, `courses` and `reserved`.
    If the entry is going to wait in a pull request, put its ID in `reserved` on `main` straight away.
 2. Commit and push. Every guide already out there picks it up within about 5 minutes.
 3. Rebuild the guides in the brand kit (`indieops-brand/scripts/build-guide.mjs`) so the new card is baked into the next release.

@@ -14,7 +14,7 @@
       "https://raw.githubusercontent.com/indieops-co/skilllet-registry/main/catalogue.json"
     ]
   },
-  "_idRule": "id is assigned once, at first public release, and never changes. Format: <release year>-<sequence within that year>. The version carries freshness; the id is a primary key. Re-stamping an id because something was revised destroys the only property that makes it an id. One sequence covers skilllets, courses and reserved: the next free id is one past the highest in all three lists.",
+  "_idRule": "id is assigned once, at first public release, and never changes. Format: <release year>-<sequence within that year>. The version carries freshness; the id is a primary key. Re-stamping an id because something was revised destroys the only property that makes it an id. One sequence covers skilllets, software, courses and reserved: the next free id is one past the highest in all four lists.",
   "_statusValues": [
     "shipped",
     "building",
@@ -27,10 +27,11 @@
   },
   "_urlRule": "A card links to the entry's url if it has one (https only), otherwise to <brand.productPages>/<slug> (indieops.co/skills/<slug>, so the top level stays free for marketing pages). 'previously' lists retired slugs so the site can redirect them.",
   "_repoRule": "repo is the GitHub repo (and local folder) name inside indieops-co. It can differ from slug: slug is the product's identity (the shipped folder, the SKILL.md name, the /command, the Shared Profiles notes file, the indieops.co page) and never changes; the repo name is just where the code is stored.",
-  "_priceRule": "Prices live here and nowhere else: price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. freeTier names a free edition of a paid Skilllet (PromptAwesome Core); price is then the paid edition's. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License, and a freeTier edition ships the Free one.",
-  "_billingRule": "billing: \"annual\" means price is per year (the site shows \"$199 / year\" and the store product is a yearly subscription); absent means a single payment. usage: the one line about usage fees, shown under the price. Both only on app-kind entries so far.",
+  "_priceRule": "Skilllet prices live here and nowhere else (software is priced on the site; see _softwareRule): price is the current price in whole US dollars, 0 for free. The indieops.co catalogue page and the store read it from here, so changing a price is one edit. Nothing shipped to a buyer (guides, covers, READMEs, licenses) ever shows a price, because a price inside a downloaded file can't be changed; build-guide refuses a chooser that contains one. Marketing drafts write {{price}} and fill it in on the day. An entry with no price field isn't priced yet. freeTier names a free edition of a paid Skilllet (PromptAwesome Core); price is then the paid edition's. The price also picks the license: 0 ships the IndieOps Free License, anything else the IndieOps Commercial License, and a freeTier edition ships the Free one.",
+  "_billingRule": "A Skilllet is a single payment, so a skilllets entry carries no billing or usage field: every guide's chooser tells the reader 'no subscription', and guides already downloaded keep saying it. Anything sold by the year is software and goes in the software list.",
   "_checkoutRule": "checkout is the entry's Lemon Squeezy checkout link, https only. A product page's download button goes through it even when price is 0, so every download leaves the email that updates are sent to. Empty means the store product isn't set up yet, and the page says the download opens soon. Only the indieops.co product pages read it; it is never shown in anything that ships. An entry that is still building keeps it empty until it ships.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
+  "_softwareRule": "software lists IndieOps Software that has an id: tools sold as a yearly subscription (and included for IndieOps Business Incubator members), not Skilllets. They take ids from the same sequence so nothing can collide, but they live in their own list because every guide's chooser, including the live top-up inside guides already downloaded, reads only skilllets and promises no subscription. Their price, billing, usage line, checkout and homepage line live in the indieops.co site's src/data/products.json with the rest of the software, so a price is still kept in one place. Fields: id, slug, name, status (shipped | building | planned), problem, does, repo.",
   "_courseRule": "courses are IndieOps Courses: single-file HTML courses, delivered as $0 Lemon Squeezy lead magnets and listed on indieops.co/guides. They take ids from the same sequence as skilllets so the two can never collide, but they live in their own list because the guides' choosers and the indieops.co directory read only skilllets: a course never appears as a card under 'Which Skilllet do you need next?'. Fields: id, slug, name, series, status (shipped | building), problem, does, and source (its folder in the private guides repo).",
   "_reservedRule": "reserved holds an id claimed by a Skilllet whose entry is still waiting in a pull request (one that merges on release day). Nothing reads it except whoever picks the next id. The pull request that adds the entry to skilllets deletes its line here.",
   "skilllets": [
@@ -317,9 +318,6 @@
       "name": "Memvana",
       "kind": "skill",
       "status": "planned",
-      "price": 99,
-      "billing": "annual",
-      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
       "problem": "Four thousand screenshots and a Notes app you have not opened in a year.",
       "does": "Reads the pile and works out what you were actually trying to remember.",
       "for": [
@@ -591,22 +589,16 @@
       "needs": [
         "Web search turned on in Claude, for live source checks (optional)"
       ]
-    },
+    }
+  ],
+  "software": [
     {
       "id": "2026-24",
       "slug": "gbp-magnet",
       "name": "GBP Magnet",
-      "kind": "app",
       "status": "building",
-      "price": 99,
-      "billing": "annual",
-      "usage": "Usage fees on top unless you bring your own API keys (LLM, Google and the like).",
-      "checkout": "",
       "problem": "Local businesses are losing calls to a weak Google Business Profile, and you can't find them fast enough to help.",
       "does": "Finds local businesses whose Google Business Profile is costing them calls, and hands you the opening line.",
-      "for": [
-        "getting clients"
-      ],
       "repo": "gbp-magnet"
     }
   ],
