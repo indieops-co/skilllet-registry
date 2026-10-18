@@ -600,6 +600,15 @@
       "problem": "Local businesses are losing calls to a weak Google Business Profile, and you can't find them fast enough to help.",
       "does": "Finds local businesses whose Google Business Profile is costing them calls, and hands you the opening line.",
       "repo": "gbp-magnet"
+    },
+    {
+      "id": "2026-21",
+      "slug": "cabinet-ready",
+      "name": "Cabinet-Ready",
+      "status": "building",
+      "problem": "A business's knowledge is scattered across hundreds of files, and nobody knows what's current, what's duplicated, or what's safe to give an AI.",
+      "does": "Scores a business's files for AI readiness, turns them into a privacy-governed Business Brain the owner corrects on a screen, and publishes only what they approve.",
+      "repo": "cabinet-ready"
     }
   ],
   "courses": [
@@ -614,12 +623,5 @@
       "source": "guides/MarketingMasterclass"
     }
   ],
-  "reserved": [
-    {
-      "id": "2026-21",
-      "slug": "cabinet-ready",
-      "name": "Cabinet-Ready",
-      "note": "Its entry waits in skilllet-registry PR #3, which merges on release day and deletes this line."
-    }
-  ]
+  "reserved": []
 }
