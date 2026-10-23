@@ -589,6 +589,33 @@
       "needs": [
         "Web search turned on in Claude, for live source checks (optional)"
       ]
+    },
+    {
+      "id": "2026-27",
+      "slug": "qangel",
+      "name": "QAngel",
+      "kind": "skill",
+      "status": "building",
+      "price": 29,
+      "checkout": "",
+      "problem": "Claude says it tested your app, and you can't see what it actually checked.",
+      "does": "Builds a QA suite from your PRD or your site, runs it in the browser without submitting anything on production, and turns one HTML page into the plan, the live tracker and the report.",
+      "for": [
+        "building"
+      ],
+      "repo": "QAngel",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18+",
+        "A browser Claude can drive, to run tests (optional)"
+      ]
     }
   ],
   "software": [
