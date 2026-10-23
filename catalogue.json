@@ -623,5 +623,18 @@
       "source": "guides/MarketingMasterclass"
     }
   ],
-  "reserved": []
+  "reserved": [
+    {
+      "id": "2026-25",
+      "slug": "localshero",
+      "name": "LocalShErO",
+      "note": "IndieOps Software (yearly). Its software entry is added on release day in indieops-co/localshero's release, which deletes this line."
+    },
+    {
+      "id": "2026-26",
+      "slug": "localshero-academy",
+      "name": "LocalShErO Academy",
+      "note": "IndieOps Course (free lead magnet for LocalShErO). Its course entry is added when the course ships from guides/, which deletes this line."
+    }
+  ]
 }
