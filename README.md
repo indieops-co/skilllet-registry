@@ -45,7 +45,7 @@ The day the site serves the same file, with the same CORS header, they switch ov
 | `status` | `shipped` · `building` · `planned`. Planned entries never show in a chooser |
 | `freeTier` | name of a free edition of a paid Skilllet (e.g. PromptAwesome `Core`). `price` is then the paid edition's; the free edition ships the Free License |
 | `price` | current price in whole US dollars, `0` for free. Also picks the license: 0 ships the IndieOps Free License, anything else the Commercial one. Never shown in a guide |
-| `checkout` | the Lemon Squeezy checkout link (https) behind the product page's download button, even at price 0, so every download leaves an email for updates. `""` until the store product exists; the page then says the download opens soon |
+| `checkout` | the Gumroad product link (https; its custom permalink is the slug) behind the product page's download button, even at price 0, so every download leaves an email for updates. `""` until the store product exists; the page then says the download opens soon |
 | `problem` | the reader's complaint, one line |
 | `does` | what it does about it, one line |
 | `for` | tags that pick the chooser group |
@@ -69,7 +69,7 @@ guides already downloaded, reads only `skilllets`. Its price, billing, usage lin
 live in the site's `src/data/products.json` with the rest of the software, so a price is still in one place.
 Its fields are `id`, `slug`, `name`, `status`, `problem`, `does` and `repo`.
 
-`courses` lists the IndieOps Courses: single-file HTML courses, given away as $0 Lemon Squeezy lead magnets
+`courses` lists the IndieOps Courses: single-file HTML courses, given away as $0 Gumroad lead magnets
 and listed on `indieops.co/guides`. `2026-23` is the first, *Turn Strangers Into Regulars* (the Marketing
 Masterclass). A course takes its ID from the same sequence as the Skilllets, but it sits in its own list
 because the guides' choosers and the indieops.co directory read only `skilllets`. So a course never appears
