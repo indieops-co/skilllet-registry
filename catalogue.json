@@ -32,7 +32,7 @@
   "_checkoutRule": "checkout is the entry's Lemon Squeezy checkout link, https only. A product page's download button goes through it even when price is 0, so every download leaves the email that updates are sent to. Empty means the store product isn't set up yet, and the page says the download opens soon. Only the indieops.co product pages read it; it is never shown in anything that ships. An entry that is still building keeps it empty until it ships.",
   "_platformRule": "platforms, worksWith and needs are what a cover page's platform line shows. Set them here first and copy them to the cover, so the two can't disagree. platforms: macos | windows | linux, each the minimum OS version ('' when there is none worth stating). worksWith: the AI assistants it has been tested with: claude | codex | gemini. Only list what has passed a real run; add one later in a new version. needs: other software with its minimum version, in the words the cover uses.",
   "_softwareRule": "software lists IndieOps Software that has an id: tools sold as a yearly subscription (and included for IndieOps Business Incubator members), not Skilllets. They take ids from the same sequence so nothing can collide, but they live in their own list because every guide's chooser, including the live top-up inside guides already downloaded, reads only skilllets and promises no subscription. Their price, billing, usage line, checkout and homepage line live in the indieops.co site's src/data/products.json with the rest of the software, so a price is still kept in one place. Fields: id, slug, name, status (shipped | building | planned), problem, does, repo.",
-  "_courseRule": "courses are IndieOps Courses: single-file HTML courses, delivered as $0 Lemon Squeezy lead magnets and listed on indieops.co/guides. They take ids from the same sequence as skilllets so the two can never collide, but they live in their own list because the guides' choosers and the indieops.co directory read only skilllets: a course never appears as a card under 'Which Skilllet do you need next?'. Fields: id, slug, name, series, status (shipped | building), problem, does, and source (its folder in the private guides repo).",
+  "_courseRule": "courses are IndieOps Courses: single-file HTML courses, delivered through Lemon Squeezy and listed on indieops.co/guides. Most are $0 lead magnets; a paid course carries price, in whole US dollars, and as with Skilllets the price lives here and never in the file. They take ids from the same sequence as skilllets so the two can never collide, but they live in their own list because the guides' choosers and the indieops.co directory read only skilllets: a course never appears as a card under 'Which Skilllet do you need next?'. Fields: id, slug, name, series, status (shipped | building), price (paid courses only), problem, does, and source (its folder in the private guides repo).",
   "_reservedRule": "reserved holds an id claimed by a Skilllet whose entry is still waiting in a pull request (one that merges on release day). Nothing reads it except whoever picks the next id. The pull request that adds the entry to skilllets deletes its line here.",
   "skilllets": [
     {
@@ -659,6 +659,17 @@
       "problem": "Nobody answers my \"I noticed your website\" emails.",
       "does": "Fourteen steps and eight prompt cards for finding your first local web clients: one niche, ten honest website concepts, ten physical postcards with QR codes, and a human conversation when somebody bites.",
       "source": "guides/postcard-prospecting-playbook"
+    },
+    {
+      "id": "2026-29",
+      "slug": "e-motions",
+      "name": "AI has e-motions now",
+      "series": "IndieOps Advanced AI Video",
+      "status": "building",
+      "price": 49,
+      "problem": "My AI videos look like everyone else's.",
+      "does": "Fourteen pages and a tested starter kit for making video as code with Claude Code: the seek(t) engine, springs, a beat grid, synthesized sound, a critique loop, the overnight brief and a 3D product spot.",
+      "source": "guides/Advanced-AI-Video-Editing"
     }
   ],
   "reserved": [
