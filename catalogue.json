@@ -413,9 +413,9 @@
       "kind": "skill",
       "status": "shipped",
       "price": 0,
-      "checkout": "",
-      "problem": "Our other Skilllets reference this for your and your clients' profiles & preferences.",
-      "does": "One folder of plain notes on your computer, your profile and one per business, that every IndieOps Skilllet reads and writes, plus a brand theme for each that starts from an open design system and is tuned in a live preview. Install it once and they stop asking.",
+      "checkout": "https://spastaferno.gumroad.com/l/shared-profiles",
+      "problem": "Some of our other Skilllets reference this for your and your clients' profiles & preferences.",
+      "does": "Plus a brand theme for each that starts from an open design system and is tuned in a live preview.",
       "for": [
         "everything"
       ],
