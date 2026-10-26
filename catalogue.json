@@ -233,7 +233,7 @@
       "slug": "approvalpilot",
       "name": "ApprovalPilot",
       "kind": "plugin",
-      "status": "building",
+      "status": "shipped",
       "price": 19,
       "checkout": "",
       "problem": "A good plan-mode session dies when the context window does.",
@@ -649,6 +649,16 @@
       "problem": "I keep launching to an empty room.",
       "does": "Eight short Issues and a 30-day build that set up a small, honest marketing system: a page before launch, a list you own, a three-email welcome and numbers that help you decide.",
       "source": "guides/MarketingMasterclass"
+    },
+    {
+      "id": "2026-25",
+      "slug": "postcard-playbook",
+      "name": "The Postcard That Sells the Website",
+      "series": "IndieOps Postcard Playbook",
+      "status": "building",
+      "problem": "Nobody answers my \"I noticed your website\" emails.",
+      "does": "Fourteen steps and eight prompt cards for finding your first local web clients: one niche, ten honest website concepts, ten physical postcards with QR codes, and a human conversation when somebody bites.",
+      "source": "guides/postcard-prospecting-playbook"
     }
   ],
   "reserved": [
