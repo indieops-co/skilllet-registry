@@ -651,7 +651,7 @@
       "source": "guides/MarketingMasterclass"
     },
     {
-      "id": "2026-25",
+      "id": "2026-30",
       "slug": "postcard-playbook",
       "name": "The Postcard That Sells the Website",
       "series": "IndieOps Postcard Playbook",
@@ -684,6 +684,12 @@
       "slug": "localshero-academy",
       "name": "LocalShErO Academy",
       "note": "IndieOps Course (free lead magnet for LocalShErO). Its course entry is added when the course ships from guides/, which deletes this line."
+    },
+    {
+      "id": "2026-28",
+      "slug": "edit-ready",
+      "name": "Edit Ready",
+      "note": "IndieOps Skilllet (skilllets-plugins/edit-ready, released with the Headless Edit guide). Its entry waits in that repo's CATALOGUE-ENTRY.draft.json; the pull request that adds it to skilllets deletes this line."
     }
   ]
 }
