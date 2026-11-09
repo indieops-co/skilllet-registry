@@ -617,6 +617,35 @@
         "Node.js 18+",
         "A browser Claude can drive, to run tests (optional)"
       ]
+    },
+    {
+      "id": "2026-31",
+      "slug": "lead-magazine",
+      "name": "Lead Magazine",
+      "kind": "skill",
+      "status": "planned",
+      "price": 12,
+      "checkout": "",
+      "problem": "Your lead magnet is a PDF of bullet points nobody opens twice.",
+      "does": "Turns what you know into a magazine-style lead magnet: an illustrated cover whose characters link to their sections, in your own brand, as one HTML file and a PDF.",
+      "for": [
+        "getting clients",
+        "publishing"
+      ],
+      "repo": "lead-magazine",
+      "platforms": {
+        "macos": "10.15+",
+        "windows": "10+",
+        "linux": "glibc 2.28+"
+      },
+      "worksWith": [
+        "claude"
+      ],
+      "needs": [
+        "Node.js 18+",
+        "Chrome, Edge, Chromium or Brave",
+        "ChatGPT or Gemini for the pictures, or an OpenRouter key"
+      ]
     }
   ],
   "software": [
