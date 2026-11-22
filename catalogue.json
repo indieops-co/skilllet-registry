@@ -719,6 +719,18 @@
       "slug": "edit-ready",
       "name": "Edit Ready",
       "note": "IndieOps Skilllet (skilllets-plugins/edit-ready, released with the Headless Edit guide). Its entry waits in that repo's CATALOGUE-ENTRY.draft.json; the pull request that adds it to skilllets deletes this line."
+    },
+    {
+      "id": "2026-32",
+      "slug": "kittl-ready",
+      "name": "Kittl Ready",
+      "note": "Skilllet (skill, $12 tier). Entry arrives in the PR that ships with the Kittl guide. Reserved 2026-11-18."
+    },
+    {
+      "id": "2026-33",
+      "slug": "prospect-beach",
+      "name": "Prospect Beach",
+      "note": "Skilllet (skill, paid, own Proof Lab code). A prospecting and outreach coach with the Prospect Beach board, plus a step-by-step ChatGPT business profile claim. Ships with the free ChatBP guide. Entry arrives in its release PR. Reserved 2026-11-21."
     }
   ]
 }
