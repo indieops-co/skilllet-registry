@@ -623,11 +623,11 @@
       "slug": "lead-magazine",
       "name": "Lead Magazine",
       "kind": "skill",
-      "status": "planned",
+      "status": "shipped",
       "price": 12,
-      "checkout": "",
-      "problem": "Your lead magnet is a PDF of bullet points nobody opens twice.",
-      "does": "Turns what you know into a magazine-style lead magnet: an illustrated cover whose characters link to their sections, in your own brand, as one HTML file and a PDF.",
+      "checkout": "https://indieops.gumroad.com/l/lead-magazine",
+      "problem": "Up your lead magnet game.",
+      "does": "This converts what you know into a magazine-style lead magnet: an illustrated cover whose characters link to their sections, in your own brand, as one HTML file and a PDF.",
       "for": [
         "getting clients",
         "publishing"
