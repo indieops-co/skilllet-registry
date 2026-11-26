@@ -732,6 +732,12 @@
       "slug": "prospect-beach",
       "name": "Prospect Beach",
       "note": "Skilllet (skill, paid, own Proof Lab code). A prospecting and outreach coach with the Prospect Beach board, plus a step-by-step ChatGPT business profile claim. Ships with the free ChatBP guide. Entry arrives in its release PR. Reserved 2026-11-21."
+    },
+    {
+      "id": "2026-34",
+      "slug": "skool-ready",
+      "name": "Skool Ready",
+      "note": "Skilllet (plugin, $12 tier, Claude Code first). The Skool-only spin-off of Gumroad Ready: turns a course (HTML, Markdown, Word or Google Doc) into an HTML Kit for pasting into Skool Classroom, with a course check, the group's About page and a launch post. Entry arrives in its release PR. Reserved 2026-11-25."
     }
   ]
 }
